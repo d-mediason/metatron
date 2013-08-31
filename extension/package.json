@@ -1,0 +1,13 @@
+{
+  "name": "metatoron_extension",
+  "version": "0.0.0",
+  "repository": "git@github.com:d-mediason/metatron.git",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-regarde": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-crx": "*"
+  }
+}
