@@ -19,4 +19,7 @@ object ApiController extends Controller {
     )
     Ok(contentsTree)
   }
+  def register = Action { request =>
+    Ok(Json.obj("status" -> "ok"))
+  }
 }
