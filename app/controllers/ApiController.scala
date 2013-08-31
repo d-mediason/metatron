@@ -2,8 +2,10 @@ package controllers
 
 import play.api.mvc.{Controller, Action}
 import play.api.libs.json.{JsNull, JsValue, Json}
+import com.redis.RedisClient
 
 object ApiController extends Controller {
+  val redis = new RedisClient("f.morikuma.org", 6379)
   def tree = Action { implicit request =>
     val contentsTree: JsValue = Json.obj(
       "status" -> "ok",
@@ -25,5 +27,20 @@ object ApiController extends Controller {
       "param" -> request.body.toString
     )
     Ok(response)
+  }
+  def registerPost = Action { request =>
+    request.body.asFormUrlEncoded match {
+      case None => BadRequest(Json.obj("status" -> "ng"))
+      case Some(req: Map[String, Seq[String]]) => {
+        case param if req.exists(n => n._1 == "parent") && req.exists(m => m._1 == "child") => {
+          val parent = req.get("parent")
+          val child = req.get("child")
+
+        }
+        case _ => BadRequest(Json.obj("status" -> "ng"))
+      }
+    }
+
+    Ok
   }
 }
