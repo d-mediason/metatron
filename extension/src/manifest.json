@@ -8,5 +8,8 @@
 		"default_icon": "image/icon.png",
 		"default_popup": "metatoron.html"
 	},
-	"permissions": [ "https://nikkei.morikuma.org/" ]
+	"permissions": [
+		"tabs",
+		"nikkei.morikuma.org"
+	]
 }

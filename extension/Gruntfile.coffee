@@ -24,7 +24,7 @@ module.exports = (grunt) ->
 
     regarde:
       js:
-        files: "src/"
+        files: "src/*"
         tasks: ['crx', 'jshint']
 
   grunt.registerTask 'default', [
