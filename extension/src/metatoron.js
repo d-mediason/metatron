@@ -7,8 +7,10 @@ $(function(){
 		var pageTitle = $('#pageTitle').text();
 		var pageUrl = $('#pageUrl').text();
 		var srcUrl = $('#srcUrl').val();
-		$.get('http://f.morikuma.org/', [pageTitle,pageUrl,srcUrl].join(','), function(resp) {
-			alert(resp);
+		$.get('http://f.morikuma.org/api/register', [pageTitle,pageUrl,srcUrl].join(','), function(resp) {
+			if (resp.status === 'ok') {
+				alert('登録しました');
+			}
 		});
 	});
 });
