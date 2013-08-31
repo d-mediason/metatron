@@ -1,0 +1,12 @@
+{
+	"name": "Metatoron",
+	"manifest_version": 2,
+	"version": "1.0",
+	"description": "metatoron",
+	"icons": { "48": "image/icon48.png", "128": "image/icon128.png" },
+	"browser_action": {
+		"default_icon": "image/icon.png",
+		"default_popup": "metatoron.html"
+	},
+	"permissions": [ "https://nikkei.morikuma.org/" ]
+}
