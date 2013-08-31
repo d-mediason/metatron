@@ -1,11 +1,7 @@
 @(message: String)
 
 @main("ソースなにこれ？") {
-
-  val loginForm = Form(
-    tuple(
-      "email" -> text,
-      "password" -> text
-    )
-  )
+  <form action="/tree" method="GET">
+    <input type="text" name="uri">
+  </form>
 }
