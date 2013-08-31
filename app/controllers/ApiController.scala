@@ -1,6 +1,6 @@
 package controllers
 
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.{Controller, Action}
 import play.api.libs.json.{JsNull, JsValue, Json}
 
 object ApiController extends Controller {
@@ -20,6 +20,10 @@ object ApiController extends Controller {
     Ok(contentsTree)
   }
   def register = Action { request =>
-    Ok(Json.obj("status" -> "ok"))
+    val response = Json.obj(
+      "status" -> "ok",
+      "param" -> request.body.toString
+    )
+    Ok(response)
   }
 }
