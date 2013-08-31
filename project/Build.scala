@@ -10,7 +10,9 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     // Add your project dependencies here,
     jdbc,
-    anorm
+    anorm,
+    "net.debasishg" % "redisclient_2.10" % "2.10"
+
   )
 
 
