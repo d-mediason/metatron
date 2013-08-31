@@ -7,7 +7,7 @@ $(function(){
 		var pageTitle = $('#pageTitle').text();
 		var pageUrl = $('#pageUrl').text();
 		var srcUrl = $('#srcUrl').val();
-		$.get('http://f.morikuma.org/api/register', [pageTitle,pageUrl,srcUrl].join(','), function(resp) {
+		$.post('http://f.morikuma.org/api/register', { child:pageUrl, parent:srcUrl}, function(resp) {
 			if (resp.status === 'ok') {
 				alert('登録しました');
 			}
