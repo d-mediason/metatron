@@ -1,0 +1,5 @@
+
+div.base:before {
+	content:"→";
+	color: red;
+}
