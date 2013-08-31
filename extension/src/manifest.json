@@ -10,6 +10,6 @@
 	},
 	"permissions": [
 		"tabs",
-		"nikkei.morikuma.org"
+		"http://f.morikuma.org/"
 	]
 }

@@ -9,8 +9,9 @@ object Application extends Controller {
     Ok(views.html.index("test"))
   }
 
-  def tree(id: String) = Action {
-    Ok(views.html.tree(id))
+  def tree(uri: String) = Action {
+    val encode_uri = java.net.URLEncoder.encode(uri, "UTF-8")
+    Ok(views.html.tree(encode_uri))
   }
 }
 
