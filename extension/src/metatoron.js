@@ -1,5 +1,5 @@
 chrome.tabs.getSelected(null, function(tab) {
-	$('#pageUrl').text('<a href="http://f.morikuma.org/tree?uri='+tab.url+'" target="_blank">'+tab.url+'</a>');
+	$('#pageUrl').html('<a href="http://f.morikuma.org/tree?uri='+tab.url+'" target="_blank">'+tab.url+'</a>');
 	$('#pageTitle').text(tab.title);
 });
 $(function(){
