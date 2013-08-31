@@ -13,4 +13,4 @@ GET     /api/tree                   controllers.ApiController.tree
 
 # POST    /api/tree                   controllers.ApiController.tree
 
-GET     /api/register               controllers.ApiController.register
+POST    /api/register               controllers.ApiController.register
