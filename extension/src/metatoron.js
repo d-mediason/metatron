@@ -7,6 +7,8 @@ $(function(){
 		var pageTitle = $('#pageTitle').text();
 		var pageUrl = $('#pageUrl').text();
 		var srcUrl = $('#srcUrl').val();
-		alert( [pageTitle,pageUrl,srcUrl].join(',') );
+		$.get('http://f.morikuma.org/', [pageTitle,pageUrl,srcUrl].join(','), function(resp) {
+			alert(resp);
+		});
 	});
 });
