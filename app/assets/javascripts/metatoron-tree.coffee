@@ -1,13 +1,15 @@
-$ ()->
-  writeChildren = (base, children)->
+$ ->
+  writeChildren = (children)->
+    $ul = $('<ul></ul>')
     $.each children, (childUri, childChildren)->
-      childBase = $('<div class="child"></div>').text(childUri).appendTo(base)
-      writeChildren childBase, childChildren
+      $('<li class="child"></li>').text(childUri).append(writeChildren childChildren).appendTo($ul)
+    $ul
 
-  writeParents = (base, parents)->
+  writeParents = (parents)->
+    $ul = $('<ul></ul>')
     $.each parents, (parentUri, parentParents)->
-      parentBase = $('<div class="parent"></div>').text(parentUri).appendTo(base)
-      writeChildren parentBase, parentParents
+      $('<li class="parent"></li>').text(parentUri).append(writeChildren parentParents).appendTo($ul)
+    $ul
 
 
 
@@ -15,7 +17,10 @@ $ ()->
   $.get '/api/tree', { uri: uri }, (resp)->
     console.log resp
     $('body').empty()
-    base = $('<div class="base"></div>').text(resp.base).appendTo('body')
-    writeChildren base, resp.children
-    writeParents base, resp.parents
+
+    $('<div class="base"></div>').text(resp.base).appendTo('body')
+      .append("<h3>parents</h3>")
+      .append(writeParents resp.parents)
+      .append("<h3>children</h3>")
+      .append(writeChildren resp.children)
 
