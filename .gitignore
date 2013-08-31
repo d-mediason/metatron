@@ -33,3 +33,5 @@ test-result
 server.pid
 *.iml
 *.eml
+
+node_modules
