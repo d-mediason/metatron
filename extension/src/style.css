@@ -1,3 +1,11 @@
 body {
-	width: 320px;
+	width: 600px;
+	font-size: 13px;
+}
+#pageUrl {
+	font-size: 12px;
+	color: blue;
+}
+input#srcUrl {
+	width: 300px;
 }
